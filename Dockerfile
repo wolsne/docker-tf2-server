@@ -3,7 +3,7 @@ maintainer Robin Appelman <robin@icewind.nl>
 
 RUN apt-get -y update
 RUN apt-get -y upgrade
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install lib32gcc1 wget lib32ncurses5 bzip2
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install lib32gcc1 wget lib32ncurses5 bzip2 unzip
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENV USER tf2
