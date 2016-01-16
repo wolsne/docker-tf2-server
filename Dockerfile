@@ -20,7 +20,8 @@ RUN wget -O - http://media.steampowered.com/client/steamcmd_linux.tar.gz | tar -
 ADD ./tf2_ds.txt $SERVER/tf2_ds.txt
 ADD ./update.sh $SERVER/update.sh
 ADD ./tf.sh $SERVER/tf.sh
-RUN $SERVER/update.sh
+ADD ./clean.sh $SERVER/clean.sh
+RUN $SERVER/update.sh && $SERVER/clean.sh
 
 EXPOSE 27015/udp
 
