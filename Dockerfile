@@ -1,8 +1,8 @@
-from debian:jessie
+from 32bit/ubuntu:16.04
 maintainer Robin Appelman <robin@icewind.nl>
 
 RUN apt-get -y update \
-	&& apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install lib32gcc1 wget lib32ncurses5 bzip2 unzip \
+	&& apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install libstdc++6 wget libncurses5 bzip2 unzip \
 	&& apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENV USER tf2
